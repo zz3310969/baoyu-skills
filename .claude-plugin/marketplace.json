@@ -49,6 +49,18 @@
         "./skills/baoyu-markdown-to-html",
         "./skills/baoyu-translate"
       ]
+    },
+    {
+      "name": "mediacrawler-skills",
+      "description": "MediaCrawler integration skills for crawling and managing social media data via REST API",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/mediacrawler-crawl-task",
+        "./skills/mediacrawler-data-export",
+        "./skills/mediacrawler-health-check",
+        "./skills/mediacrawler-account-manage"
+      ]
     }
   ]
 }
