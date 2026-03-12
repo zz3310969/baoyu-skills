@@ -103,7 +103,7 @@ Schema 参考：`references/config/extend-schema.md`
 ```bash
 curl -s -X POST "${BASE_URL}/api/tasks" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: ${API_KEY}" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "task_name": "搜索 {keywords} - {platform}",
     "config": {
@@ -124,7 +124,7 @@ curl -s -X POST "${BASE_URL}/api/tasks" \
 ```bash
 curl -s -X POST "${BASE_URL}/api/tasks" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: ${API_KEY}" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "task_name": "详情爬取",
     "config": {
@@ -142,7 +142,7 @@ curl -s -X POST "${BASE_URL}/api/tasks" \
 
 ```bash
 curl -s "${BASE_URL}/api/tasks/{task_id}" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 **状态说明**：
@@ -189,21 +189,21 @@ curl -s "${BASE_URL}/api/tasks/{task_id}" \
 
 ```bash
 curl -s -X POST "${BASE_URL}/api/tasks/{task_id}/cancel" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 ### 重试失败的任务
 
 ```bash
 curl -s -X POST "${BASE_URL}/api/tasks/{task_id}/retry" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 ### 查看任务列表
 
 ```bash
 curl -s "${BASE_URL}/api/tasks?page=1&page_size=10" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 ## Extension Support

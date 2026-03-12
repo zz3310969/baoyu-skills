@@ -77,7 +77,7 @@ API_KEY=your-api-key-here
 
 ```bash
 curl -s "${BASE_URL}/api/accounts?page=1&page_size=100" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 输出格式：
@@ -112,7 +112,7 @@ curl -s "${BASE_URL}/api/accounts?page=1&page_size=100" \
 ```bash
 curl -s -X PUT "${BASE_URL}/api/accounts/{account_id}" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: ${API_KEY}" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "cookies": "{new_cookie_string}"
   }'
@@ -122,7 +122,7 @@ curl -s -X PUT "${BASE_URL}/api/accounts/{account_id}" \
 
 ```bash
 curl -s -X POST "${BASE_URL}/api/accounts/{account_id}/verify" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 返回结果：
@@ -134,7 +134,7 @@ curl -s -X POST "${BASE_URL}/api/accounts/{account_id}/verify" \
 ```bash
 curl -s -X POST "${BASE_URL}/api/accounts" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: ${API_KEY}" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "platform": "{platform}",
     "account_id": "{unique_id}",
@@ -148,7 +148,7 @@ curl -s -X POST "${BASE_URL}/api/accounts" \
 
 ```bash
 curl -s -X DELETE "${BASE_URL}/api/accounts/{account_id}" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 **3.6 启用/禁用账号**：
@@ -156,7 +156,7 @@ curl -s -X DELETE "${BASE_URL}/api/accounts/{account_id}" \
 ```bash
 curl -s -X PUT "${BASE_URL}/api/accounts/{account_id}" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: ${API_KEY}" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{"status": "active"}'  # 或 "disabled"
 ```
 

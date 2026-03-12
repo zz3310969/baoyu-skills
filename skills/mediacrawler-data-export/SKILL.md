@@ -86,21 +86,21 @@ API_KEY=your-api-key-here
 
 ```bash
 curl -s "${BASE_URL}/api/data/{platform}/notes?keyword={keyword}&start_date={start_date}&end_date={end_date}&page=1&page_size=50" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 **查询评论**：
 
 ```bash
 curl -s "${BASE_URL}/api/data/{platform}/comments?note_id={note_id}&page=1&page_size=100" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 **获取统计摘要**：
 
 ```bash
 curl -s "${BASE_URL}/api/data/{platform}/stats?keyword={keyword}&start_date={start_date}&end_date={end_date}" \
-  -H "X-API-Key: ${API_KEY}"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 ### Step 4：处理和输出数据
@@ -136,13 +136,13 @@ curl -s "${BASE_URL}/api/data/{platform}/stats?keyword={keyword}&start_date={sta
 
 ```bash
 # 获取总数
-total=$(curl -s "${BASE_URL}/api/data/{platform}/notes/count?..." -H "X-API-Key: ${API_KEY}" | jq '.count')
+total=$(curl -s "${BASE_URL}/api/data/{platform}/notes/count?..." -H "Authorization: Bearer ${API_KEY}" | jq '.count')
 
 # 计算总页数并逐页获取
 pages=$(( (total + 99) / 100 ))
 for page in $(seq 1 $pages); do
   curl -s "${BASE_URL}/api/data/{platform}/notes?page=${page}&page_size=100&..." \
-    -H "X-API-Key: ${API_KEY}"
+    -H "Authorization: Bearer ${API_KEY}"
 done
 ```
 

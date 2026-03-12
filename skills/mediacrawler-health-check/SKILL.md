@@ -77,13 +77,13 @@ HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 5 "${BASE_U
 **2.2 检查数据库**：
 
 ```bash
-curl -s "${BASE_URL}/api/system/db-status" -H "X-API-Key: ${API_KEY}"
+curl -s "${BASE_URL}/api/system/db-status" -H "Authorization: Bearer ${API_KEY}"
 ```
 
 **2.3 检查任务队列**：
 
 ```bash
-curl -s "${BASE_URL}/api/tasks/stats" -H "X-API-Key: ${API_KEY}"
+curl -s "${BASE_URL}/api/tasks/stats" -H "Authorization: Bearer ${API_KEY}"
 ```
 
 关注：
@@ -94,7 +94,7 @@ curl -s "${BASE_URL}/api/tasks/stats" -H "X-API-Key: ${API_KEY}"
 **2.4 检查账号池**：
 
 ```bash
-curl -s "${BASE_URL}/api/accounts?page=1&page_size=100" -H "X-API-Key: ${API_KEY}"
+curl -s "${BASE_URL}/api/accounts?page=1&page_size=100" -H "Authorization: Bearer ${API_KEY}"
 ```
 
 统计各平台有效账号数量，Cookie 失效的账号标记为警告。
@@ -102,13 +102,13 @@ curl -s "${BASE_URL}/api/accounts?page=1&page_size=100" -H "X-API-Key: ${API_KEY
 **2.5 检查代理池**：
 
 ```bash
-curl -s "${BASE_URL}/api/proxies/stats" -H "X-API-Key: ${API_KEY}"
+curl -s "${BASE_URL}/api/proxies/stats" -H "Authorization: Bearer ${API_KEY}"
 ```
 
 **2.6 检查系统资源**：
 
 ```bash
-curl -s "${BASE_URL}/api/system/disk" -H "X-API-Key: ${API_KEY}"
+curl -s "${BASE_URL}/api/system/disk" -H "Authorization: Bearer ${API_KEY}"
 ```
 
 磁盘使用超过 80% 发出警告。
