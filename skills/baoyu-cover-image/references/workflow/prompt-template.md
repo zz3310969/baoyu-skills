@@ -62,6 +62,7 @@ Visual composition:
 - Decorative: [palette-specific elements that reinforce content theme]
 
 Color scheme: [primary, background, accent from palette definition, adjusted by mood]
+Color constraint: Color values (#hex) and color names are rendering guidance only — do NOT display color names, hex codes, or palette labels as visible text in the image.
 Rendering notes: [key characteristics from rendering definition — lines, texture, depth, element style]
 Type notes: [key characteristics from type definition]
 Palette notes: [key characteristics from palette definition]
@@ -200,6 +201,12 @@ CRITICAL: The generated cover MUST visually reference the provided images. The c
 - [Colors]: [Exact hex values, e.g., "Dark teal #2D4A3E background, cream #F5F0E0 text"]
 - [Typography]: [Specific treatment, e.g., "Uppercase text with wide letter-spacing"]
 - [Layout element]: [Specific spatial element, e.g., "Bottom banner strip in dark color"]
+
+## From Ref 1 ([filename]) — Characters (if people present):
+- **Character 1**: [Appearance, e.g., "Woman, long wavy blonde hair"] → MUST stylize: [e.g., "flat-vector, simplified face, keep blonde hair, label: 'Nicole Forsgren'"]
+- **Character 2**: [Appearance, e.g., "Man, short dark hair, stubble"] → MUST stylize: [e.g., "flat-vector, simplified face, keep dark hair, label: 'Gergely Orosz'"]
+- **Placement**: [e.g., "Right third, side by side, facing left toward main visual"]
+- **Style**: Match rendering style, NOT photorealistic
 
 ## From Ref 2 ([filename]) — REQUIRED elements:
 [Same detailed breakdown]

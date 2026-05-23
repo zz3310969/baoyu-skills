@@ -4,13 +4,8 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SKILLS_DIR="${ROOT_DIR}/skills"
 
-if command -v clawhub >/dev/null 2>&1; then
-  CLAWHUB_CMD=(clawhub)
-elif command -v npx >/dev/null 2>&1; then
-  CLAWHUB_CMD=(npx -y clawhub)
-else
-  echo "Error: neither clawhub nor npx is available."
-  echo "See https://docs.openclaw.ai/zh-CN/tools/clawhub"
+if ! command -v node >/dev/null 2>&1; then
+  echo "Error: node is required."
   exit 1
 fi
 
@@ -18,4 +13,4 @@ if [ "$#" -eq 0 ]; then
   set -- --all
 fi
 
-exec "${CLAWHUB_CMD[@]}" sync --root "${SKILLS_DIR}" "$@"
+exec node "${ROOT_DIR}/scripts/sync-clawhub.mjs" --root "${SKILLS_DIR}" "$@"
